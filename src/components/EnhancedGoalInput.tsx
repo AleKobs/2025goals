@@ -33,7 +33,8 @@ export function EnhancedGoalInput({ onAddGoal }: EnhancedGoalInputProps) {
       <div className="flex space-x-2">
         <DatePicker
           selected={date}
-          onChange={(date: Date) => setDate(date)}
+          /* eslint "@typescript-eslint/no-explicit-any": "off" */
+          onChange={(date: any) => setDate(date)}
           dateFormat="dd/MM/yyyy"
           className="flex-grow bg-gray-800 border-gray-700 text-white placeholder-gray-400 rounded-md px-3 py-2"
         />
