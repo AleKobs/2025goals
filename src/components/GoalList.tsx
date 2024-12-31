@@ -114,13 +114,13 @@ export function GoalList({ goals, onToggleGoal, onDeleteGoal, onReorderGoals, on
       <Droppable droppableId="goals">
 
         {
-          /* eslint "@typescript-eslint/no-explicit-any": "off" */
+
           (provided: any) => (
             <ul {...provided.droppableProps} ref={provided.innerRef}>
               {goals.map((goal, index) => (
                 <Draggable key={goal.id} draggableId={goal.id} index={index}>
                   {
-                    /* eslint "@typescript-eslint/no-explicit-any": "off" */
+
                     (provided: any, snapshot: any) => (
                       <GoalItem
                         ref={provided.innerRef}
