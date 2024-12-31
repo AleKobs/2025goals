@@ -34,7 +34,7 @@ export function EnhancedGoalInput({ onAddGoal }: EnhancedGoalInputProps) {
         <DatePicker
           selected={date}
           /* eslint "@typescript-eslint/no-explicit-any": "off" */
-          onChange={(date: any) => setDate(date)}
+          onChange={(date: Date | null, event?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => setDate(date as Date)}
           dateFormat="dd/MM/yyyy"
           className="flex-grow bg-gray-800 border-gray-700 text-white placeholder-gray-400 rounded-md px-3 py-2"
         />
