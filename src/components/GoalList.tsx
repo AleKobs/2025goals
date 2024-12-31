@@ -98,7 +98,7 @@ interface GoalListProps {
 }
 
 export function GoalList({ goals, onToggleGoal, onDeleteGoal, onReorderGoals, onUpdateCategory }: GoalListProps) {
-  const handleDragEnd = (result: any) => {
+  const handleDragEnd = (result) => {
     if (!result.destination) return
 
     const newGoals = Array.from(goals)
