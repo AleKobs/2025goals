@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 import { PlusCircle } from 'lucide-react'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
-import { TagInput } from './TagInput'
+// import { TagInput } from './TagInput'
 
 interface EnhancedGoalInputProps {
   onAddGoal: (goal: string, date: Date) => void
@@ -29,7 +29,7 @@ export function EnhancedGoalInput({ onAddGoal }: EnhancedGoalInputProps) {
 
   return (
     <form onSubmit={handleSubmit} className="w-full space-y-4">
-      <TagInput tags={tags} setTags={setTags} />
+      {/* <TagInput tags={tags} setTags={setTags} /> */}
       <div className="flex space-x-2">
         <DatePicker
           selected={date}
