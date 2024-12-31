@@ -113,48 +113,52 @@ export function GoalList({ goals, onToggleGoal, onDeleteGoal, onReorderGoals, on
     <DragDropContext onDragEnd={handleDragEnd}>
       <Droppable droppableId="goals">
 
-        {(provided) => (
-          <ul {...provided.droppableProps} ref={provided.innerRef}>
-            {goals.map((goal, index) => (
-              <Draggable key={goal.id} draggableId={goal.id} index={index}>
-                {(provided, snapshot) => (
-                  <GoalItem
-                    ref={provided.innerRef}
-                    {...provided.draggableProps}
-                    {...provided.dragHandleProps}
-                    $isDragging={snapshot.isDragging}
-                  >
-                    <GoalContent>
-                      <CheckButton
-                        $isCompleted={goal.isCompleted}
-                        onClick={() => onToggleGoal(goal.id)}
+        {
+          /* eslint "@typescript-eslint/no-explicit-any": "off" */
+          (provided: any) => (
+            <ul {...provided.droppableProps} ref={provided.innerRef}>
+              {goals.map((goal, index) => (
+                <Draggable key={goal.id} draggableId={goal.id} index={index}>
+                  {
+                    /* eslint "@typescript-eslint/no-explicit-any": "off" */
+                    (provided: any, snapshot: any) => (
+                      <GoalItem
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        $isDragging={snapshot.isDragging}
                       >
-                        <Check size={16} />
-                      </CheckButton>
-                      <GoalText $isCompleted={goal.isCompleted}>
-                        {goal.text}
-                      </GoalText>
-                    </GoalContent>
-                    <GoalActions>
-                      <CategorySelect
-                        selectedCategory={goal.category}
-                        onSelectCategory={(category) => onUpdateCategory(goal.id, category)}
-                      />
-                      <DateDisplay>
-                        <Calendar size={12} />
-                        <span>{goal.date.toLocaleDateString('pt-BR')}</span>
-                      </DateDisplay>
-                      <DeleteButton onClick={() => onDeleteGoal(goal.id)}>
-                        <X size={16} />
-                      </DeleteButton>
-                    </GoalActions>
-                  </GoalItem>
-                )}
-              </Draggable>
-            ))}
-            {provided.placeholder}
-          </ul>
-        )}
+                        <GoalContent>
+                          <CheckButton
+                            $isCompleted={goal.isCompleted}
+                            onClick={() => onToggleGoal(goal.id)}
+                          >
+                            <Check size={16} />
+                          </CheckButton>
+                          <GoalText $isCompleted={goal.isCompleted}>
+                            {goal.text}
+                          </GoalText>
+                        </GoalContent>
+                        <GoalActions>
+                          <CategorySelect
+                            selectedCategory={goal.category}
+                            onSelectCategory={(category) => onUpdateCategory(goal.id, category)}
+                          />
+                          <DateDisplay>
+                            <Calendar size={12} />
+                            <span>{goal.date.toLocaleDateString('pt-BR')}</span>
+                          </DateDisplay>
+                          <DeleteButton onClick={() => onDeleteGoal(goal.id)}>
+                            <X size={16} />
+                          </DeleteButton>
+                        </GoalActions>
+                      </GoalItem>
+                    )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </ul>
+          )}
       </Droppable>
     </DragDropContext>
   )
