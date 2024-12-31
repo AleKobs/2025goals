@@ -98,7 +98,8 @@ interface GoalListProps {
 }
 
 export function GoalList({ goals, onToggleGoal, onDeleteGoal, onReorderGoals, onUpdateCategory }: GoalListProps) {
-  const handleDragEnd = (result) => {
+  /* eslint "@typescript-eslint/no-explicit-any": "off" */
+  const handleDragEnd = (result: any) => {
     if (!result.destination) return
 
     const newGoals = Array.from(goals)
@@ -111,6 +112,7 @@ export function GoalList({ goals, onToggleGoal, onDeleteGoal, onReorderGoals, on
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
       <Droppable droppableId="goals">
+
         {(provided) => (
           <ul {...provided.droppableProps} ref={provided.innerRef}>
             {goals.map((goal, index) => (
