@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { theme, type Category } from '@/lib/theme'
-import { X, Calendar } from 'lucide-react'
+import { type Category } from '@/lib/theme'
+import { X } from 'lucide-react'
 import { CategorySelect } from '@/components/CategorySelect'
 
 const ModalOverlay = styled.div`

@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
-import { theme, type Category } from '@/lib/theme'
-import { Check, X, Calendar, ChevronRight } from 'lucide-react'
+import { type Category } from '@/lib/theme'
+import { Check, X, Calendar } from 'lucide-react'
 import { CategorySelect } from '@/components/CategorySelect'
 
 const GoalItem = styled.li<{ $isDragging: boolean }>`
@@ -58,7 +58,7 @@ const ActionButton = styled.button`
   }
 `
 
-const CheckButton = styled(ActionButton)<{ $isCompleted: boolean }>`
+const CheckButton = styled(ActionButton) <{ $isCompleted: boolean }>`
   color: ${props => props.$isCompleted ? props.theme.colors.secondary : props.theme.colors.text.secondary};
 
   &:hover {

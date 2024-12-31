@@ -22,9 +22,9 @@ export function HelpModal() {
           <DialogTitle>Como usar Metas 2025</DialogTitle>
           <DialogDescription>
             Defina suas metas para 2025 seguindo o formato:
-            "Eu [verbo] [objetivo] até [data]"
-            
-            Exemplo: "Eu vou aprender Python até 01/05/2025"
+            &quot;Eu [verbo] [objetivo] até [data]&quot;
+
+            Exemplo: &quot;Eu vou aprender Python até 01/05/2025&quot;
 
             Adicione até 100 metas para traçar seus objetivos para o ano.
             Você pode editar ou excluir suas metas a qualquer momento.
